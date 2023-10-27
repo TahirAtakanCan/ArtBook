@@ -15,6 +15,7 @@
 		FBC929172AEAC0C2007EB943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC929162AEAC0C2007EB943 /* Assets.xcassets */; };
 		FBC9291A2AEAC0C2007EB943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBC929182AEAC0C2007EB943 /* LaunchScreen.storyboard */; };
 		FBC929222AEAC44B007EB943 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC929212AEAC44B007EB943 /* DetailsVC.swift */; };
+		FBC929242AEBF608007EB943 /* selectimage.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC929232AEBF608007EB943 /* selectimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FBC929192AEAC0C2007EB943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBC9291B2AEAC0C2007EB943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC929212AEAC44B007EB943 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		FBC929232AEBF608007EB943 /* selectimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectimage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +65,13 @@
 				FBC9290A2AEAC0C1007EB943 /* AppDelegate.swift */,
 				FBC9290C2AEAC0C1007EB943 /* SceneDelegate.swift */,
 				FBC9290E2AEAC0C1007EB943 /* ViewController.swift */,
+				FBC929212AEAC44B007EB943 /* DetailsVC.swift */,
 				FBC929102AEAC0C1007EB943 /* Main.storyboard */,
 				FBC929162AEAC0C2007EB943 /* Assets.xcassets */,
+				FBC929232AEBF608007EB943 /* selectimage.png */,
 				FBC929182AEAC0C2007EB943 /* LaunchScreen.storyboard */,
 				FBC9291B2AEAC0C2007EB943 /* Info.plist */,
 				FBC929132AEAC0C1007EB943 /* ArtBookProject.xcdatamodeld */,
-				FBC929212AEAC44B007EB943 /* DetailsVC.swift */,
 			);
 			path = ArtBookProject;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC9291A2AEAC0C2007EB943 /* LaunchScreen.storyboard in Resources */,
+				FBC929242AEBF608007EB943 /* selectimage.png in Resources */,
 				FBC929172AEAC0C2007EB943 /* Assets.xcassets in Resources */,
 				FBC929122AEAC0C1007EB943 /* Main.storyboard in Resources */,
 			);
