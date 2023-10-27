@@ -59,7 +59,7 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
 
-            let alertController = UIAlertController(title: "Select Photo", message: "Where do you want to choose the picture?", preferredStyle: .actionSheet)
+            let alertController = UIAlertController(title: "Select", message: "Where do you want to choose the picture?", preferredStyle: .actionSheet)
 
             let galleryAction = UIAlertAction(title: "Photos", style: .default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
