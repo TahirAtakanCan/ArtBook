@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -24,18 +25,11 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
         //Recognizer      klavye kapatma
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))
         view.addGestureRecognizer(gestureRecognizer)
         
+        // kullanıcı görsele tıklaması
         imageView.isUserInteractionEnabled = true
         let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         imageView.addGestureRecognizer(imageTapRecognizer)
@@ -46,6 +40,38 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
     
     
     @IBAction func saveButtonText(_ sender: Any){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newPainting = NSEntityDescription.insertNewObject(forEntityName: "Paintings", into: context)
+        
+        // Attributes
+        
+        newPainting.setValue(nameText.text, forKey: "name")
+        newPainting.setValue(artistText.text, forKey: "artist")
+        
+        if let year = Int(yearText.text!){
+            newPainting.setValue(year, forKey: "year")
+        }
+        
+        newPainting.setValue(UUID(), forKey: "id")
+        
+        let data = imageView.image!.jpegData(compressionQuality: 0.5)
+        newPainting.setValue(data, forKey: "image")
+        
+        // hata çıkabilir sadece bu şekil yazamam
+        //context.save()
+        
+        do{
+            try context.save()
+            print("success")
+        }catch {
+            print("error")
+        }
+        
+        
+        
         
     }
     
@@ -58,7 +84,8 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
         let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
-
+            //galeriye götürmek
+        
             let alertController = UIAlertController(title: "Select", message: "Where do you want to choose the picture?", preferredStyle: .actionSheet)
 
             let galleryAction = UIAlertAction(title: "Photos", style: .default) { (action) in
@@ -67,7 +94,7 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
                     self.present(imagePicker, animated: true, completion: nil)
                 } else {
                     // Galeri kullanılamaz uyarısı
-                    // Örneğin: self.showAlert(message: "Galeri kullanılamıyor.")
+                    
                 }
             }
 
@@ -77,7 +104,7 @@ class DetailsVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
                     self.present(imagePicker, animated: true, completion: nil)
                 } else {
                     // Kamera kullanılamaz uyarısı
-                    // Örneğin: self.showAlert(message: "Kamera kullanılamıyor.")
+                    
                 }
             }
 
